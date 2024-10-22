@@ -3,15 +3,12 @@ import pandas as pd
 import matplotlib.pyplot as plt
 def kubik(n: int) -> list:
     """
-
     :param n: Количество подбрасываний
-    :return:  Список слкучайных подюрасываний кубика
+    :return:  Список случайных подбрасываний кубика
     """
-    data = []
-    while len(data) < n:
-        data.append(random.randint(1, 6))
+    data = random.choices(range(1, 7), k=n)  # Получаем n случайных чисел от 1 до 6 с возможностью повторений
     return data
-
+    #random.choices альтернатива random.sample(),для исключения ошибки
 def count_rate(kub_data: list):
     """
     Возвращает частоту выпадания значений кубика,
